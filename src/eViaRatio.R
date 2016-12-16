@@ -1,5 +1,7 @@
 ## see my blog for discussion of this small project - http://www.bigsmartdata.com/finding-e-in-r/
+
 eViaRatio <- function(n){
+ 
   f = 0;
   fn = 1;
   fp = 1;
@@ -16,24 +18,19 @@ eViaRatio <- function(n){
     intg = f - (f %% 1) # take only the whole integer part
      
     if( intg > fn ){  # if we have exceeded the next whole integer value, save state and print out the ratio
-      #if( i > 1 && previ > 1)
-      
-      print(paste(intg, (i)/previ,i))
+     
       j = i - previ
       print(paste("Integer:", intg,  "j:", j, " prevj:", prevj, " ratio:", j / prevj))
       print(paste("Integer:", intg,  "i:", i, " previ:", previ, " ratio:", i / previ))
       print(paste("Integer:", intg,  "i/j:", i/j, " previ/prevj:", previ/prevj))
-      #print(paste(intg, j/prevj))
-      #xVec = c(xVec, intg)
-      #yVec = c(yVec, (j/prevj))
-      #zVec = c(zVec, i)
-      #previ = i
-      
       prevj = j
       fn = intg
       previ = i
+      
     }
+  
   }
+ 
 }
 
 sumfunc <- function(n){
